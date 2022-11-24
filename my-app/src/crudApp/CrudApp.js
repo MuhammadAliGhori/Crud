@@ -1,12 +1,8 @@
 import React,  { useState } from "react";
-import { useAlert } from "react-alert";
 // import { object } from "yup";
 import './crud.css'
 
-
-
 export default function CrudApp() {
-  const alert = useAlert();
     // basics states for getting values
     const [name, setName] = useState("");
     const [mail, setMail] = useState("");
@@ -22,11 +18,11 @@ export default function CrudApp() {
     const addUser = (e) => {
       e.preventDefault();
       if(name === ""){
-        return alert.show("pls enter the name")
+        return alert("pls enter the name")
       }else if(mail === ""){
-        return alert.show("pls enter the correct mail")
+        return alert("pls enter the correct mail")
       }else if(address.length < 10 ){
-        return alert.error("pls enter the address and length must greater than 10 chracters")
+        return alert("pls enter the address and length must greater than 10 chracters")
       }
       const user = {
         name ,
